@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/check', {
+        templateUrl: 'views/check.html',
+        controller: 'CheckCtrl',
+        controllerAs: 'check'
+      })
       .otherwise({
         redirectTo: '/'
       });
