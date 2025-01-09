@@ -128,7 +128,7 @@ function App() {
             <CardHeader>
               <CardTitle>Start an AI Discussion</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Enter a topic and 3 AI agents will automatically discuss it for 10 rounds
+                Enter a topic and watch AI agents discuss it automatically
               </p>
             </CardHeader>
             <CardContent>
@@ -159,7 +159,7 @@ function App() {
                 </Button>
                 {getCurrentConversation()?.is_auto_playing && (
                   <div className="text-sm text-center text-muted-foreground animate-pulse">
-                    3 AI agents are discussing your topic...
+                    AI agents are discussing your topic...
                   </div>
                 )}
               </div>
