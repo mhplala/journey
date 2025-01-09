@@ -1,6 +1,6 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
@@ -16,7 +16,12 @@ export default defineConfig({
         chunkFileNames: `assets/[name]-[hash]-${Date.now()}.js`,
         assetFileNames: `assets/[name]-[hash]-${Date.now()}.[ext]`
       }
-    }
-  }
+    },
+    emptyOutDir: true
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'no-store',
+    },
+  },
 })
-
