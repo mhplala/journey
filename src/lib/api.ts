@@ -1,6 +1,6 @@
 import { Topic } from './types';
 
-const BASE_URL = window.location.origin;
+export const BASE_URL = window.location.origin;
 
 export async function createConversation(agentCount: number, topic: string, roundCount: number) {
   const response = await fetch(`${BASE_URL}/api/conversations`, {

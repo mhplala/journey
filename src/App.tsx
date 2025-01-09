@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { stopConversation, getTopics, createConversation } from './lib/api'
+import { stopConversation, getTopics, createConversation, BASE_URL } from './lib/api'
 import { Topic, Message } from './lib/types'
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -44,7 +44,7 @@ function App() {
 
     const pollInterval = setInterval(async () => {
       try {
-        const response = await fetch(`http://45.76.190.47/api/conversations/${currentConversation}`)
+        const response = await fetch(`${BASE_URL}/api/conversations/${currentConversation}`)
         const data = await response.json()
         if (data.messages) {
           setMessages(data.messages)
