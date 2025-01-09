@@ -17,11 +17,19 @@ export default defineConfig({
         assetFileNames: `assets/[name]-[hash]-${Date.now()}.[ext]`
       }
     },
-    emptyOutDir: true
+    emptyOutDir: true,
+    // Force cache busting
+    assetsDir: 'assets',
+    sourcemap: true,
+    manifest: true,
+    write: true
   },
   server: {
     headers: {
-      'Cache-Control': 'no-store',
+      'Cache-Control': 'no-store, no-cache, must-revalidate, private',
+      'Pragma': 'no-cache',
+      'Expires': '0',
     },
   },
 })
+
