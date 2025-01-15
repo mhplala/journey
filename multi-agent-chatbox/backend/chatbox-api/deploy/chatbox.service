@@ -1,0 +1,13 @@
+[Unit]
+Description=Chatbox API Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/chatbox-api
+ExecStart=/root/chatbox-api/start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
